@@ -12,14 +12,18 @@
     "@types/node": "^13.1.8",
     "@types/react": "^16.9.18",
     "@types/react-dom": "^16.9.5",
+    "autoprefixer": "^9.7.4",
     "eslint-plugin-react": "^7.18.0",
     "gh-pages": "^2.2.0",
+    "postcss-cli": "^7.1.0",
+    "tailwindcss": "^1.2.0",
     "typescript": "^3.7.5"
   },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
+    "start": "npm run build:style && react-scripts start",
+    "build:style":"tailwind build src/index.css -o src/tailwind.css",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

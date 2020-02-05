@@ -1,3 +1,3 @@
-import { test } from './test';
+import { cntl } from './cntl';
 
-export { test };
+export default cntl;

@@ -1,11 +1,19 @@
 {
-  "name": "typescript-lib-boilerplate",
+  "name": "cntl",
   "version": "1.0.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "repository": {
-    "url": "https://github.com/michal-wrzosek/typescript-lib-boilerplate",
+    "url": "https://github.com/michal-wrzosek/cntl",
     "type": "git"
+  },
+  "description": "Small library that helps you write your class names in a more clear, readable and composable way. Especially useful with tailwind css.",
+  "keywords": ["css", "class names", "tailwindcss", "tailwind", "classnames", "typescript", "template literals"],
+  "homepage": "https://github.com/michal-wrzosek/cntl",
+  "author": {
+    "name" : "Michał Wrzosek",
+    "email" : "michal@wrzosek.pl",
+    "url" : "https://michal.wrzosek.pl"
   },
   "license": "MIT",
   "types": "dist/index.d.ts",
