@@ -3,6 +3,8 @@
 **c**lass **n**ames **t**emplate **l**iterals for **tailwind** type of frameworks
 
 ---
+[![Travis (.org)](https://img.shields.io/travis/michal-wrzosek/cntl)](https://travis-ci.com/michal-wrzosek/cntl)
+[![npm](https://img.shields.io/npm/v/cntl)](https://www.npmjs.com/package/cntl)
 
 This is a small library that helps you write your class names in a more clear, readable and composable way. If you use a library like **tailwind** css where you compose your styles by providing lots of class names this utility tool can help you a lot.
 

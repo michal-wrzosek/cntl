@@ -23,7 +23,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "npm run build:style && react-scripts start",
-    "build:style":"tailwind build src/index.css -o src/tailwind.css",
+    "build:style": "tailwind build src/index.css -o src/tailwind.css",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
