@@ -1,0 +1,185 @@
+{
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/all",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:functional/all",
+    "plugin:react/all",
+    "plugin:react-perf/all",
+    "plugin:jsx-a11y/strict",
+    "plugin:sonarjs/recommended",
+    "plugin:unicorn/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "functional",
+    "jsx-a11y",
+    "prettier",
+    "react",
+    "react-perf",
+    "react-hooks",
+    "sort-keys-fix",
+    "unicorn"
+  ],
+  "reportUnusedDisableDirectives": true,
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "rules": {
+    "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      {
+        "allowExpressions": true,
+        "allowTypedFunctionExpressions": true,
+        "allowHigherOrderFunctions": true
+      }
+    ],
+    "@typescript-eslint/restrict-template-expressions": ["error", { "allowNumber": true }],
+    "no-magic-numbers": "off",
+    "@typescript-eslint/no-magic-numbers": [
+      "warn",
+      {
+        "ignore": [-1, 0, 1, 100, 1000, 10000],
+        "ignoreArrayIndexes": true,
+        "ignoreNumericLiteralTypes": true,
+        "ignoreEnums": true
+      }
+    ],
+    "@typescript-eslint/no-unnecessary-condition": ["warn"],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "variable",
+        "format": ["camelCase", "UPPER_CASE", "PascalCase"]
+      }
+    ],
+    "no-unused-vars": "off",
+    "no-implicit-coercion": "error",
+    "@typescript-eslint/no-unused-vars": ["error", { "args": "all", "argsIgnorePattern": "^_" }],
+    "arrow-body-style": "error",
+    "import/no-default-export": "error",
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ],
+    "react/jsx-boolean-value": ["error", "always"],
+    "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
+    "react/jsx-fragments": ["error", "element"],
+    "react/jsx-max-depth": ["error", { "max": 3 }],
+    "react/function-component-definition": [
+      "error",
+      { "namedComponents": "arrow-function", "unnamedComponents": "arrow-function" }
+    ],
+    "sonarjs/cognitive-complexity": "warn",
+    "sonarjs/no-duplicate-string": "warn",
+    "sort-keys-fix/sort-keys-fix": ["error", "asc", { "natural": true }],
+    "unicorn/prevent-abbreviations": [
+      "error",
+      {
+        "checkShorthandImports": false,
+        "replacements": {
+          "env": false,
+          "prop": false,
+          "props": false,
+          "ref": false,
+          "refs": false
+        }
+      }
+    ],
+    "react/display-name": "off",
+    "react/prop-types": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/init-declarations": "off",
+    "@typescript-eslint/no-base-to-string": "off",
+    "@typescript-eslint/no-parameter-properties": "off",
+    "@typescript-eslint/no-type-alias": "off",
+    "@typescript-eslint/prefer-readonly-parameter-types": "off",
+    "@typescript-eslint/require-await": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/typedef": "off",
+    "functional/functional-parameters": "off",
+    "functional/no-class": "off",
+    "functional/no-conditional-statement": "off",
+    "functional/no-expression-statement": "off",
+    "functional/no-mixed-type": "off",
+    "functional/no-return-void": "off",
+    "functional/no-throw-statement": "off",
+    "functional/prefer-type-literal": "off",
+    "import/extensions": ["off"],
+    "import/prefer-default-export": "off",
+    "no-empty-function": "off",
+    "no-underscore-dangle": "off",
+    "react/boolean-prop-naming": "off",
+    "react/sort-prop-types": "off",
+    "react/require-default-props": "off",
+    "react/jsx-no-literals": "off",
+    "require-await": "off",
+    "unicorn/no-null": "off",
+    "unicorn/no-reduce": "off"
+  },
+  "overrides": [
+    {
+      "files": ["*{_,.}{test,spec}.ts{,x}"],
+      "globals": {
+        "expect": "readonly",
+        "jest": "readonly",
+        "describe": "readonly",
+        "it": "readonly",
+        "beforeEach": "readonly",
+        "afterEach": "readonly"
+      },
+      "rules": {
+        "@typescript-eslint/no-magic-numbers": "off",
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+        "react-perf/jsx-no-jsx-as-prop": "off",
+        "react-perf/jsx-no-new-array-as-prop": "off",
+        "react-perf/jsx-no-new-function-as-prop": "off",
+        "react-perf/jsx-no-new-object-as-prop": "off",
+        "react/jsx-props-no-spreading": "off",
+        "sonarjs/no-duplicate-string": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off"
+      }
+    },
+    {
+      "files": ["*.story.ts{,x}"],
+      "rules": {
+        "@typescript-eslint/no-magic-numbers": "off",
+        "eslint-disable react/no-array-index-key": "off",
+        "eslint-disable react/no-multi-comp": "off",
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+        "react/no-array-index-key": "off",
+        "react/no-multi-comp": "off",
+        "react-perf/jsx-no-new-object-as-prop": "off",
+        "react-perf/jsx-no-new-array-as-prop": "off",
+        "react-perf/jsx-no-new-function-as-prop": "off",
+        "react-perf/jsx-no-jsx-as-prop": "off"
+      }
+    }
+  ],
+  "root": true,
+  "parserOptions": {
+    "project": "./tsconfig.test.json"
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import cntl from './typescript-lib';
+import cntl from '../../typescript-lib';
 
 const appCN = cntl`
   flex
@@ -8,6 +8,9 @@ const appCN = cntl`
   my-2
   sm:my-24
   md:my-48
+  bg-gradient-to-r
+  from-green-400
+  to-blue-500
 `;
 
 const cardCN = cntl`
@@ -76,16 +79,16 @@ const buttonCN = cntl`
   focus:shadow-outline
 `;
 
-const App = () => {
+export const App = () => {
   const [errors, setErrors] = React.useState<string[]>([]);
   const emailRef = React.createRef<HTMLInputElement>();
   const passwordRef = React.createRef<HTMLInputElement>();
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = () => {
     setErrors([]);
-  }
+  };
 
-  const handleSubmit: React.FormEventHandler = event => {
+  const handleSubmit: React.FormEventHandler = (event) => {
     event.preventDefault();
     event.stopPropagation();
 
@@ -112,7 +115,7 @@ const App = () => {
               ref={emailRef}
               type="email"
               name="email"
-              id=""
+              id="email"
               placeholder="email"
               onChange={handleChange}
               className={inputCN({ isErrored: isErrored('email') })}
@@ -125,7 +128,7 @@ const App = () => {
             <input
               type="password"
               name="email"
-              id=""
+              id="password"
               placeholder="password"
               onChange={handleChange}
               className={inputCN({ isErrored: isErrored('password') })}
@@ -141,5 +144,3 @@ const App = () => {
     </div>
   );
 };
-
-export default App;
